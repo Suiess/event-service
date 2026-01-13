@@ -7,6 +7,6 @@ RUN mvn clean package -DskipTests
 # 2. Aşama: Run (Çalıştırma)
 FROM eclipse-temurin:21-jdk-jammy
 WORKDIR /app
-COPY --from=build /target/*.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/app.jar"]
