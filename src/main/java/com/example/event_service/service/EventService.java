@@ -20,21 +20,21 @@ public class EventService {
 
     private void loadInitialData() {
 
-        repository.save(new SkiEvent("Gece Kayağı", "Dış Mekan", "Cumartesi", "20:00", "23:00", 450.0, "Pist 1", "Eğlenceli gece sürüşü"));
-        repository.save(new SkiEvent("Kar Club Partisi", "Eğlence", "Cuma", "22:00", "03:00", 250.0, "Peak Club", "Dress Code: Beyaz"));
-        repository.save(new SkiEvent("Profesyonel Kayak Dersi", "Eğitim", "Perşembe", "10:00", "13:00", 1200.0, "Siyah Pist", "İleri teknikler"));
-        repository.save(new SkiEvent("Zirvede Alkollü Kahvaltı","Gastro & Entertainment","Pazar","10:00", "13:00",850.0, "Panorama Restoran","Sınırsız Mimosa ve yerel lezzetler eşliğinde lüks kahvaltı."));
-        repository.save(new SkiEvent("Karda Ateş ve Işık Gösterisi", "Show", "Cumartesi", "21:00", "22:30", 200.0, "Ana Meydan", "Profesyonel ekiplerden kar üzerinde nefes kesen ateş dansı."));
-        repository.save(new SkiEvent("Amatörler Arası Slalom Yarışı", "Sports", "Pazar", "14:00", "17:00", 300.0, "Mavi Pist", "Her seviyeden katılıma açık, ödüllü kayak yarışması. Ekipman dahil değildir."));
+        repository.save(new SkiEvent("Night Skiing", "Outdoor", "Saturday", "20:00", "23:00", 450.0, "Slope 1", "Fun night riding"));
+        repository.save(new SkiEvent("Snow Club Party", "Entertainment", "Friday", "22:00", "03:00", 250.0, "Peak Club", "Dress Code: White"));
+        repository.save(new SkiEvent("Professional Ski Lesson", "Education", "Thursday", "10:00", "13:00", 1200.0, "Black Slope", "Advanced techniques"));
+        repository.save(new SkiEvent("Summit Boozy Breakfast", "Gastro & Entertainment", "Sunday", "10:00", "13:00", 850.0, "Panorama Restaurant", "Luxury breakfast with unlimited Mimosas and local delicacies."));
+        repository.save(new SkiEvent("Fire and Light Show on Snow", "Show", "Saturday", "21:00", "22:30", 200.0, "Main Square", "Breathtaking fire dance on snow by professional teams."));
+        repository.save(new SkiEvent("Amateur Slalom Race", "Sports", "Sunday", "14:00", "17:00", 300.0, "Blue Slope", "Award-winning ski race open to all levels. Equipment not included."));
     }
 
     public List<SkiEvent> getEventsByCategory(String category) {
         List<SkiEvent> events = repository.findByCategoryIgnoreCase(category);
 
         events.forEach(event -> {
-            System.out.println("Etkinlik: " + event.getTitle() +
-                    " | Bitiş: " + event.getEndTime() +
-                    " | Detay: " + event.getDetails());
+            System.out.println("Event: " + event.getTitle() +
+                    " | Finish: " + event.getEndTime() +
+                    " | Details: " + event.getDetails());
         });
 
         return events;

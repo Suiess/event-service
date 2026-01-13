@@ -28,7 +28,7 @@ public class EventServiceApplication {
                 runtime.exec("open " + url);
             }
         } catch (Exception e) {
-            System.out.println("Tarayıcı otomatik açılamadı: " + e.getMessage());
+            System.out.println("Browser couldn't open automatically: " + e.getMessage());
         }
     }
 }
